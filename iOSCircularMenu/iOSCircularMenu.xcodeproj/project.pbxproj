@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2B8CEC019F3C6B80008D59B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CEBF19F3C6B80008D59B /* main.m */; };
+		B2B8CEC319F3C6B80008D59B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CEC219F3C6B80008D59B /* AppDelegate.m */; };
+		B2B8CEC619F3C6B80008D59B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CEC519F3C6B80008D59B /* ViewController.m */; };
+		B2B8CEC919F3C6B80008D59B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B8CEC719F3C6B80008D59B /* Main.storyboard */; };
+		B2B8CECB19F3C6B80008D59B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B8CECA19F3C6B80008D59B /* Images.xcassets */; };
+		B2B8CECE19F3C6B80008D59B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8CECC19F3C6B80008D59B /* LaunchScreen.xib */; };
+		B2B8CEDA19F3C6B90008D59B /* iOSCircularMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CED919F3C6B90008D59B /* iOSCircularMenuTests.m */; };
+		B2B8CEE619F3C92E0008D59B /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CEE519F3C92E0008D59B /* ADCircularMenuViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2B8CED419F3C6B90008D59B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2B8CEB219F3C6B80008D59B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2B8CEB919F3C6B80008D59B;
+			remoteInfo = iOSCircularMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B2B8CEBA19F3C6B80008D59B /* iOSCircularMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCircularMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2B8CEBE19F3C6B80008D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2B8CEBF19F3C6B80008D59B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2B8CEC119F3C6B80008D59B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2B8CEC219F3C6B80008D59B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2B8CEC419F3C6B80008D59B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2B8CEC519F3C6B80008D59B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2B8CEC819F3C6B80008D59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2B8CECA19F3C6B80008D59B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2B8CECD19F3C6B80008D59B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B2B8CED319F3C6B90008D59B /* iOSCircularMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCircularMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2B8CED819F3C6B90008D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2B8CED919F3C6B90008D59B /* iOSCircularMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSCircularMenuTests.m; sourceTree = "<group>"; };
+		B2B8CEE419F3C92E0008D59B /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
+		B2B8CEE519F3C92E0008D59B /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2B8CEB719F3C6B80008D59B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2B8CED019F3C6B90008D59B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2B8CEB119F3C6B80008D59B = {
+			isa = PBXGroup;
+			children = (
+				B2B8CEE319F3C90A0008D59B /* CustomCircularMenuControlFiles */,
+				B2B8CEBC19F3C6B80008D59B /* iOSCircularMenu */,
+				B2B8CED619F3C6B90008D59B /* iOSCircularMenuTests */,
+				B2B8CEBB19F3C6B80008D59B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2B8CEBB19F3C6B80008D59B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8CEBA19F3C6B80008D59B /* iOSCircularMenu.app */,
+				B2B8CED319F3C6B90008D59B /* iOSCircularMenuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2B8CEBC19F3C6B80008D59B /* iOSCircularMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8CEC119F3C6B80008D59B /* AppDelegate.h */,
+				B2B8CEC219F3C6B80008D59B /* AppDelegate.m */,
+				B2B8CEC419F3C6B80008D59B /* ViewController.h */,
+				B2B8CEC519F3C6B80008D59B /* ViewController.m */,
+				B2B8CEC719F3C6B80008D59B /* Main.storyboard */,
+				B2B8CECA19F3C6B80008D59B /* Images.xcassets */,
+				B2B8CECC19F3C6B80008D59B /* LaunchScreen.xib */,
+				B2B8CEBD19F3C6B80008D59B /* Supporting Files */,
+			);
+			path = iOSCircularMenu;
+			sourceTree = "<group>";
+		};
+		B2B8CEBD19F3C6B80008D59B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8CEBE19F3C6B80008D59B /* Info.plist */,
+				B2B8CEBF19F3C6B80008D59B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2B8CED619F3C6B90008D59B /* iOSCircularMenuTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8CED919F3C6B90008D59B /* iOSCircularMenuTests.m */,
+				B2B8CED719F3C6B90008D59B /* Supporting Files */,
+			);
+			path = iOSCircularMenuTests;
+			sourceTree = "<group>";
+		};
+		B2B8CED719F3C6B90008D59B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8CED819F3C6B90008D59B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2B8CEE319F3C90A0008D59B /* CustomCircularMenuControlFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B2B8CEE419F3C92E0008D59B /* ADCircularMenuViewController.h */,
+				B2B8CEE519F3C92E0008D59B /* ADCircularMenuViewController.m */,
+			);
+			path = CustomCircularMenuControlFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2B8CEB919F3C6B80008D59B /* iOSCircularMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2B8CEDD19F3C6B90008D59B /* Build configuration list for PBXNativeTarget "iOSCircularMenu" */;
+			buildPhases = (
+				B2B8CEB619F3C6B80008D59B /* Sources */,
+				B2B8CEB719F3C6B80008D59B /* Frameworks */,
+				B2B8CEB819F3C6B80008D59B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSCircularMenu;
+			productName = iOSCircularMenu;
+			productReference = B2B8CEBA19F3C6B80008D59B /* iOSCircularMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2B8CED219F3C6B90008D59B /* iOSCircularMenuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2B8CEE019F3C6B90008D59B /* Build configuration list for PBXNativeTarget "iOSCircularMenuTests" */;
+			buildPhases = (
+				B2B8CECF19F3C6B90008D59B /* Sources */,
+				B2B8CED019F3C6B90008D59B /* Frameworks */,
+				B2B8CED119F3C6B90008D59B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2B8CED519F3C6B90008D59B /* PBXTargetDependency */,
+			);
+			name = iOSCircularMenuTests;
+			productName = iOSCircularMenuTests;
+			productReference = B2B8CED319F3C6B90008D59B /* iOSCircularMenuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2B8CEB219F3C6B80008D59B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Aditya Deshmane";
+				TargetAttributes = {
+					B2B8CEB919F3C6B80008D59B = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					B2B8CED219F3C6B90008D59B = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = B2B8CEB919F3C6B80008D59B;
+					};
+				};
+			};
+			buildConfigurationList = B2B8CEB519F3C6B80008D59B /* Build configuration list for PBXProject "iOSCircularMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2B8CEB119F3C6B80008D59B;
+			productRefGroup = B2B8CEBB19F3C6B80008D59B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2B8CEB919F3C6B80008D59B /* iOSCircularMenu */,
+				B2B8CED219F3C6B90008D59B /* iOSCircularMenuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2B8CEB819F3C6B80008D59B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2B8CEC919F3C6B80008D59B /* Main.storyboard in Resources */,
+				B2B8CECE19F3C6B80008D59B /* LaunchScreen.xib in Resources */,
+				B2B8CECB19F3C6B80008D59B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2B8CED119F3C6B90008D59B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2B8CEB619F3C6B80008D59B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2B8CEC619F3C6B80008D59B /* ViewController.m in Sources */,
+				B2B8CEC319F3C6B80008D59B /* AppDelegate.m in Sources */,
+				B2B8CEC019F3C6B80008D59B /* main.m in Sources */,
+				B2B8CEE619F3C92E0008D59B /* ADCircularMenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2B8CECF19F3C6B90008D59B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2B8CEDA19F3C6B90008D59B /* iOSCircularMenuTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2B8CED519F3C6B90008D59B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2B8CEB919F3C6B80008D59B /* iOSCircularMenu */;
+			targetProxy = B2B8CED419F3C6B90008D59B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2B8CEC719F3C6B80008D59B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2B8CEC819F3C6B80008D59B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2B8CECC19F3C6B80008D59B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2B8CECD19F3C6B80008D59B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2B8CEDB19F3C6B90008D59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2B8CEDC19F3C6B90008D59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2B8CEDE19F3C6B90008D59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSCircularMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2B8CEDF19F3C6B90008D59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iOSCircularMenu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B2B8CEE119F3C6B90008D59B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSCircularMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSCircularMenu.app/iOSCircularMenu";
+			};
+			name = Debug;
+		};
+		B2B8CEE219F3C6B90008D59B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iOSCircularMenuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSCircularMenu.app/iOSCircularMenu";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2B8CEB519F3C6B80008D59B /* Build configuration list for PBXProject "iOSCircularMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2B8CEDB19F3C6B90008D59B /* Debug */,
+				B2B8CEDC19F3C6B90008D59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2B8CEDD19F3C6B90008D59B /* Build configuration list for PBXNativeTarget "iOSCircularMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2B8CEDE19F3C6B90008D59B /* Debug */,
+				B2B8CEDF19F3C6B90008D59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B2B8CEE019F3C6B90008D59B /* Build configuration list for PBXNativeTarget "iOSCircularMenuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2B8CEE119F3C6B90008D59B /* Debug */,
+				B2B8CEE219F3C6B90008D59B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2B8CEB219F3C6B80008D59B /* Project object */;
+}
