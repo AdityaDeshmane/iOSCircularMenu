@@ -8,7 +8,7 @@ Circular style menu
 
 
 * Generic code 
-* Easy to modify code
+* Easy to modify 
 
 <em>This UI control can be used on all iPhones, iPods & iPads running iOS 5.0 and above.</em>
 
