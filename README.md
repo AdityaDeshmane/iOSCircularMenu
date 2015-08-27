@@ -9,8 +9,9 @@ Circular style menu
 
 ### Features
 
-* Generic code 
-* Easy to modify 
+* Generic & small code 
+* Easy to modify as per requirements
+* Customisation options like corner button images, menu buttons image, animation speed, button widths, distance between concentric circles 
 
 <em>This UI control can be used on all iPhones, iPods & iPads running iOS 5.0 and above.</em>
 
@@ -20,7 +21,7 @@ Circular style menu
 ### Adding to your project
 
 
-* Add Follwing two files to your project
+Just add Follwing two files to your project
 
 ```
 'ADCircularMenuViewController.h'
@@ -30,9 +31,11 @@ Circular style menu
 ---
 ---
 
-### How to use
+### How to use ?
 
-#### Sample Codes
+Refer following sample code / refer demo application.
+
+#### Sample Code
 
 ```obj-c
 
@@ -90,9 +93,8 @@ ADCircularMenuViewController works on iOS 5.0 & above versions and is compatible
 
 ### Other details
 
-* XCode : Developed using 6.0
-* Base sdk used while development : 8.0
-* Testing : iOS: 6,7,8   Devices : iPad & 3.5, 4, 4.7, 5.5 inch iphones
+* Testing : iOS: 5, 6, 7, 8, 9.0 Beta   
+* Devices : iPad & 3.5, 4, 4.7, 5.5 inch iphones
 
 ---
 ---
@@ -101,6 +103,7 @@ ADCircularMenuViewController works on iOS 5.0 & above versions and is compatible
 
 * More customisation options
 * Component polishing
+* Validations
 
 ---
 ---
