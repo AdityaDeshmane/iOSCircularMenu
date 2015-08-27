@@ -7,6 +7,8 @@ Circular style menu
 ![      ](\circularMenu.gif "") 
 
 
+### Features
+
 * Generic code 
 * Easy to modify 
 
@@ -95,10 +97,14 @@ ADCircularMenuViewController works on iOS 5.0 & above versions and is compatible
 ---
 ---
 
-### Todo
+### TODO
 
-* Using autolayouts instead of framing
+* More customisation options
 * Component polishing
 
 ---
 ---
+
+## License
+
+iOSCircularMenu is available under the MIT license. See the LICENSE file for more info.
