@@ -9,9 +9,12 @@ Circular style menu
 
 ### Features
 
+* Smooth animations
+* Tapping non button area closes menu
+* Tap on Corner button again to close menu
 * Generic & small code 
 * Easy to modify as per requirements
-* Customisation options like corner button images, menu buttons image, animation speed, button widths, distance between concentric circles 
+* Customisation options like corner button images, menu buttons image, animation speed, button widths, distance between concentric circles ( provides as #defines )
 
 <em>This UI control can be used on all iPhones, iPods & iPads running iOS 5.0 and above.</em>
 
@@ -104,6 +107,7 @@ ADCircularMenuViewController works on iOS 5.0 & above versions and is compatible
 * More customisation options
 * Component polishing
 * Validations
+* Show menu from any point in view
 
 ---
 ---
