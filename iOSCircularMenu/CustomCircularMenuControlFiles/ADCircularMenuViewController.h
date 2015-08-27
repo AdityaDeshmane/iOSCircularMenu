@@ -33,6 +33,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @protocol ADCircularMenuDelegate<NSObject>
 
 @optional
@@ -47,8 +49,9 @@
 
 @property(nonatomic) id <ADCircularMenuDelegate> delegateCircularMenu;
 
-//custom initialization only this should be called to init custom control
--(id)initWithMenuButtonImageNameArray:(NSArray*) arrImage andCornerButtonImageName:(NSString*) strCornerButtonImageName;
+//custom initialization, only this should be called to init custom control
+-(id)initWithMenuButtonImageNameArray:(NSArray*) arrImage
+             andCornerButtonImageName:(NSString*) strCornerButtonImageName;
 
 //shows menus
 -(void)show;

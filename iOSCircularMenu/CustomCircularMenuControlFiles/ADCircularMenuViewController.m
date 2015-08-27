@@ -33,34 +33,36 @@
 
 #import "ADCircularMenuViewController.h"
 
-#define STARTING_POINT CGPointMake(26, 38)
+
+#define STARTING_POINT              CGPointMake(26, 38)
+#define CORNER_BUTTON_WIDTH         40
+#define BUTTON_WIDTH                50
+#define FIRST_INNER_CIRCLE_RADIUS   75
+#define DISTACE_BETWEEN_CIRCLES     75
+#define SHOW_ANIMATION_DURATION     1.0
+#define HIDE_ANIMATION_DURATION     0.5
 
 @interface ADCircularMenuViewController ()<UIGestureRecognizerDelegate>
 {
-    float _fButtonSize;
-    float _fInnerRadius;
-    
-    NSUInteger _iNumberOfButtons;
-    NSMutableArray *_arrButtons;
-    NSArray *_arrButtonImageName;
-    UIButton *_buttonCorner;
-    NSString *_strCornerButtonImageName;
-
-    UIGestureRecognizer *_gestureRecognizerTap;
+    NSUInteger              _iNumberOfButtons;
+    NSMutableArray          *_arrButtons;
+    NSArray                 *_arrButtonImageName;
+    UIButton                *_buttonCorner;
+    NSString                *_strCornerButtonImageName;
+    UIGestureRecognizer     *_gestureRecognizerTap;
 }
 
-//Private Methods
--(void)setupData;
+//Initializations
 -(void)setupUI;
 -(void)setTapGesture;
 -(void)setupButtons;
 
+//Show
 -(void)showButtons;
 -(void)setButtonFrames;
 
+//Hide
 - (void)removeViewWithAnimation;
-
-//IBActions
 - (IBAction)hideMenu:(id)sender;
 
 @end
@@ -68,7 +70,8 @@
 @implementation ADCircularMenuViewController
 
 
--(id)initWithMenuButtonImageNameArray:(NSArray*) arrImage andCornerButtonImageName:(NSString*) strCornerButtonImageName;
+-(id)initWithMenuButtonImageNameArray:(NSArray*) arrImage
+             andCornerButtonImageName:(NSString*) strCornerButtonImageName;
 {
     self = [super init];
     
@@ -78,7 +81,6 @@
         _arrButtonImageName = [[NSArray alloc] initWithArray:arrImage];
         _strCornerButtonImageName = strCornerButtonImageName;
         
-        [self setupData];
         [self setupUI];
         [self setTapGesture];
         [self setupButtons];
@@ -87,20 +89,12 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
 #pragma mark - Initialization methods
-
--(void)setupData
-{
-    _fButtonSize = 35;//circular button width/height
-    _fInnerRadius = 75;//1st circle boundary
-}
-
 
 -(void)setupUI
 {
@@ -109,7 +103,6 @@
     [window.rootViewController.view addSubview:self.view];
     [self.view setBackgroundColor:[UIColor colorWithRed:200.0/255 green:200.0/255 blue:200.0/255 alpha:0.3]];//Transparent color
 }
-
 
 -(void)setTapGesture
 {
@@ -120,14 +113,13 @@
     [self.view addGestureRecognizer:_gestureRecognizerTap];
 }
 
-
 - (void)setupButtons
 {
     //Corner button
     _buttonCorner = [UIButton buttonWithType:UIButtonTypeCustom];
     [_buttonCorner setImage:[UIImage imageNamed:_strCornerButtonImageName] forState:UIControlStateNormal];
     [_buttonCorner addTarget:self action:@selector(hideMenu:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttonCorner setFrame:CGRectMake(0, 20, 40, 40)];
+    [_buttonCorner setFrame:CGRectMake(0, 20, CORNER_BUTTON_WIDTH, CORNER_BUTTON_WIDTH)];
     
     //Circular menu buttons
     _arrButtons = [[NSMutableArray alloc] init];
@@ -138,7 +130,7 @@
         [button setTag:i];
         [button addTarget:self action:@selector(hideMenu:) forControlEvents:UIControlEventTouchUpInside];
         [button setImage:[UIImage imageNamed:[_arrButtonImageName objectAtIndex:i]] forState:UIControlStateNormal];
-        [button setFrame:CGRectMake(0, 0, 50, 50)];
+        [button setFrame:CGRectMake(0, 0, BUTTON_WIDTH, BUTTON_WIDTH)];
         [_arrButtons addObject:button];
     }
 }
@@ -156,17 +148,15 @@
     
     for (int index = 0; index < _iNumberOfButtons; index++)
     {
-         UIButton *button = [_arrButtons objectAtIndex:index];
+        UIButton *button = [_arrButtons objectAtIndex:index];
         button.center = STARTING_POINT;
         [self.view addSubview:button];
     }
     
     [self.view layoutIfNeeded]; // Ensures that all pending layout operations have been completed
     
-    [UIView animateWithDuration:1.0 animations:
+    [UIView animateWithDuration:SHOW_ANIMATION_DURATION animations:
      ^{
-
-    
          [self setButtonFrames];
          [self.view layoutIfNeeded]; // Forces the layout of the subtree animation block and then captures all of the frame changes
      }];
@@ -193,7 +183,7 @@
     //1st circle initialization
     float incAngle = ( 117/3 )*M_PI/180.0 ;
     float curAngle = 0.19;//more value more to left;
-    float circleRadius = _fInnerRadius;
+    float circleRadius = FIRST_INNER_CIRCLE_RADIUS;
     
     for (int i = 0; i < _iNumberOfButtons; i++)
     {
@@ -201,13 +191,13 @@
         {
             curAngle = 0.09;
             incAngle = ( 115/4 )*M_PI/180.0;
-            circleRadius = _fInnerRadius +65;
+            circleRadius = FIRST_INNER_CIRCLE_RADIUS + DISTACE_BETWEEN_CIRCLES;
         }
         else if(i == 7)//3rd circle
         {
             curAngle = 0.04;
             incAngle = ( 113/5 )*M_PI/180.0;
-            circleRadius = _fInnerRadius +(65*2);
+            circleRadius = FIRST_INNER_CIRCLE_RADIUS +(DISTACE_BETWEEN_CIRCLES*2);
         }
         
         CGPoint buttonCenter;
@@ -241,7 +231,7 @@
 {
     [self.view layoutIfNeeded];
     
-    [UIView animateWithDuration:0.5
+    [UIView animateWithDuration:HIDE_ANIMATION_DURATION
                      animations:
      ^{
          for (int index = 0; index < _iNumberOfButtons; index++)
@@ -271,7 +261,6 @@
     for (int index = 0; index < _iNumberOfButtons; index++)
     {
         UIButton *button = [_arrButtons objectAtIndex:index];
-        
         if ((touch.view == button))
         return NO;
     }
