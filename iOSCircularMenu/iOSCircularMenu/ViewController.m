@@ -36,46 +36,43 @@
 
 @interface ViewController ()<ADCircularMenuDelegate>
 {
-    ADCircularMenuViewController *circularMenuVC;
+    ADCircularMenuViewController    *_circularMenuVC;
 }
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (IBAction)btnMenuPressed:(id)sender
 {
-    circularMenuVC = nil;
+    _circularMenuVC = nil;
     
     //use 3 or 7 or 12 for symmetric look (current implementation supports max 12 buttons)
-    NSArray *arrImageName = [[NSArray alloc] initWithObjects:@"btnMenu",
+    NSArray *arrImageName = [[NSArray alloc] initWithObjects:
                              @"btnMenu",
                              @"btnMenu",
                              @"btnMenu",
                              @"btnMenu",
                              @"btnMenu",
-                             @"btnMenu", nil];
+                             @"btnMenu",
+                             @"btnMenu",
+                             nil];
     
-    circularMenuVC = [[ADCircularMenuViewController alloc] initWithMenuButtonImageNameArray:arrImageName andCornerButtonImageName:@"btnMenuCorner"];
-    circularMenuVC.delegateCircularMenu = self;
-    [circularMenuVC show];
+    _circularMenuVC = [[ADCircularMenuViewController alloc] initWithMenuButtonImageNameArray:arrImageName
+                                                                    andCornerButtonImageName:@"btnMenuCorner"];
+    _circularMenuVC.delegateCircularMenu = self;
+    [_circularMenuVC show];
 }
 
 - (void)circularMenuClickedButtonAtIndex:(int) buttonIndex
 {
-    NSLog(@"Clicked menu button at index : %d",buttonIndex);
+    NSLog(@"Circular Mneu : Clicked button at index : %d",buttonIndex);
 }
 
 @end
