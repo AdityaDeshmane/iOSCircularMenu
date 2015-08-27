@@ -27,8 +27,8 @@ Circular style menu
 Just add Follwing two files to your project
 
 ```
-'ADCircularMenuViewController.h'
-'ADCircularMenuViewController.m'
+'ADCircularMenu.h'
+'ADCircularMenu.m'
 ```
 
 ---
@@ -43,8 +43,7 @@ Refer following sample code / refer demo application.
 ```obj-c
 
 //1.  IMPORT
-#import "ADCircularMenuViewController.h"
-
+#import "ADCircularMenu.h"
 
 
 //2. CREATING INSTANCE OF CONTROL
@@ -59,7 +58,7 @@ Refer following sample code / refer demo application.
                              @"btnMenu",
                              @"btnMenu", nil];
     
-   ADCircularMenuViewController *circularMenuVC = [[ADCircularMenuViewController alloc] initWithMenuButtonImageNameArray:arrImageName andCornerButtonImageName:@"btnMenuCorner"];                                                    
+   ADCircularMenu *circularMenuVC = [[ADCircularMenu alloc] initWithMenuButtonImageNameArray:arrImageName andCornerButtonImageName:@"btnMenuCorner"];                                                    
    circularMenuVC.delegateCircularMenu = self;
 
 
@@ -68,10 +67,8 @@ Refer following sample code / refer demo application.
     [circularMenuVC show];
     
 
-
 //4. CONFORM TO PROTOCOL
 <ADCircularMenuDelegate> //contains only one menu button click optinal method
-
 
 
 //5. HANDLE DELEGATE METHODS
@@ -89,7 +86,7 @@ Refer following sample code / refer demo application.
 
 ### Requirements
 
-ADCircularMenuViewController works on iOS 5.0 & above versions and is compatible with ARC projects. There is no need of other frameworks/libraries
+ADCircularMenu works on iOS 5.0 & above versions and is compatible with ARC projects. There is no need of other frameworks/libraries
 
 ---
 ---
