@@ -32,11 +32,11 @@
 //
 
 #import "ViewController.h"
-#import "ADCircularMenuViewController.h"
+#import "ADCircularMenu.h"
 
 @interface ViewController ()<ADCircularMenuDelegate>
 {
-    ADCircularMenuViewController    *_circularMenuVC;
+    ADCircularMenu    *_circularMenuVC;
 }
 
 @end
@@ -64,7 +64,7 @@
                              @"btnMenu",
                              nil];
     
-    _circularMenuVC = [[ADCircularMenuViewController alloc] initWithMenuButtonImageNameArray:arrImageName
+    _circularMenuVC = [[ADCircularMenu alloc] initWithMenuButtonImageNameArray:arrImageName
                                                                     andCornerButtonImageName:@"btnMenuCorner"];
     _circularMenuVC.delegateCircularMenu = self;
     [_circularMenuVC show];

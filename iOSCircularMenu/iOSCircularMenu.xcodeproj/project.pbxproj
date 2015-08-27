@@ -14,7 +14,7 @@
 		B2B8CECB19F3C6B80008D59B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B8CECA19F3C6B80008D59B /* Images.xcassets */; };
 		B2B8CECE19F3C6B80008D59B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B8CECC19F3C6B80008D59B /* LaunchScreen.xib */; };
 		B2B8CEDA19F3C6B90008D59B /* iOSCircularMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CED919F3C6B90008D59B /* iOSCircularMenuTests.m */; };
-		B2B8CEE619F3C92E0008D59B /* ADCircularMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CEE519F3C92E0008D59B /* ADCircularMenuViewController.m */; };
+		B2B8CEE619F3C92E0008D59B /* ADCircularMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B8CEE519F3C92E0008D59B /* ADCircularMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		B2B8CED319F3C6B90008D59B /* iOSCircularMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCircularMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B8CED819F3C6B90008D59B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2B8CED919F3C6B90008D59B /* iOSCircularMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSCircularMenuTests.m; sourceTree = "<group>"; };
-		B2B8CEE419F3C92E0008D59B /* ADCircularMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenuViewController.h; sourceTree = "<group>"; };
-		B2B8CEE519F3C92E0008D59B /* ADCircularMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenuViewController.m; sourceTree = "<group>"; };
+		B2B8CEE419F3C92E0008D59B /* ADCircularMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularMenu.h; sourceTree = "<group>"; };
+		B2B8CEE519F3C92E0008D59B /* ADCircularMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADCircularMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 		B2B8CEE319F3C90A0008D59B /* CustomCircularMenuControlFiles */ = {
 			isa = PBXGroup;
 			children = (
-				B2B8CEE419F3C92E0008D59B /* ADCircularMenuViewController.h */,
-				B2B8CEE519F3C92E0008D59B /* ADCircularMenuViewController.m */,
+				B2B8CEE419F3C92E0008D59B /* ADCircularMenu.h */,
+				B2B8CEE519F3C92E0008D59B /* ADCircularMenu.m */,
 			);
 			path = CustomCircularMenuControlFiles;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 				B2B8CEC619F3C6B80008D59B /* ViewController.m in Sources */,
 				B2B8CEC319F3C6B80008D59B /* AppDelegate.m in Sources */,
 				B2B8CEC019F3C6B80008D59B /* main.m in Sources */,
-				B2B8CEE619F3C92E0008D59B /* ADCircularMenuViewController.m in Sources */,
+				B2B8CEE619F3C92E0008D59B /* ADCircularMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +430,7 @@
 				B2B8CEDF19F3C6B90008D59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2B8CEE019F3C6B90008D59B /* Build configuration list for PBXNativeTarget "iOSCircularMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +439,7 @@
 				B2B8CEE219F3C6B90008D59B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
