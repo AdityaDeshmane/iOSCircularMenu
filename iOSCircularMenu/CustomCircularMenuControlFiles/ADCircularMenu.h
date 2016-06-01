@@ -40,7 +40,7 @@
 @optional
 
 //callback provides button index
-- (void)circularMenuClickedButtonAtIndex:(int) buttonIndex;
+- (void)ADCircularMenuClickedButtonAtIndex:(int) buttonIndex;
 
 @end
 
@@ -51,7 +51,8 @@
 
 //custom initialization, only this should be called to init custom control
 -(id)initWithMenuButtonImageNameArray:(NSArray*) arrImage
-             andCornerButtonImageName:(NSString*) strCornerButtonImageName;
+             andCornerButtonImageName:(NSString*) strCornerButtonImageName
+          andShouldAddStatusBarMargin:(BOOL) bShouldAddStatusBarMargin;
 
 //shows menus
 -(void)show;

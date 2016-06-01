@@ -34,7 +34,7 @@
 #import "ADCircularMenu.h"
 
 
-#define STARTING_POINT              CGPointMake(26, 38)
+#define STARTING_POINT              CGPointMake(20, 20)
 #define CORNER_BUTTON_WIDTH         40
 #define BUTTON_WIDTH                50
 #define FIRST_INNER_CIRCLE_RADIUS   75
@@ -50,6 +50,7 @@
     UIButton                *_buttonCorner;
     NSString                *_strCornerButtonImageName;
     UIGestureRecognizer     *_gestureRecognizerTap;
+    BOOL                    _bShouldAddStatusBarMargin;
 }
 
 //Initializations
@@ -71,15 +72,17 @@
 
 
 -(id)initWithMenuButtonImageNameArray:(NSArray*) arrImage
-             andCornerButtonImageName:(NSString*) strCornerButtonImageName;
+             andCornerButtonImageName:(NSString*) strCornerButtonImageName
+          andShouldAddStatusBarMargin:(BOOL) bShouldAddStatusBarMargin
 {
     self = [super init];
     
     if (self)
     {
-        _iNumberOfButtons = arrImage.count > 12 ? 12 : arrImage.count;//current implementation supports max 12 buttons
-        _arrButtonImageName = [[NSArray alloc] initWithArray:arrImage];
-        _strCornerButtonImageName = strCornerButtonImageName;
+        _iNumberOfButtons           = arrImage.count > 12 ? 12 : arrImage.count;//current implementation supports max 12 buttons
+        _arrButtonImageName         = [[NSArray alloc] initWithArray:arrImage];
+        _strCornerButtonImageName   = strCornerButtonImageName;
+        _bShouldAddStatusBarMargin  = bShouldAddStatusBarMargin;
         
         [self setupUI];
         [self setTapGesture];
@@ -87,11 +90,6 @@
     }
     
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
 }
 
 #pragma mark - Initialization methods
@@ -106,8 +104,7 @@
 
 -(void)setTapGesture
 {
-    _gestureRecognizerTap = [[UITapGestureRecognizer alloc]
-              initWithTarget:self action:@selector(handleSingleTap:)];
+    _gestureRecognizerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     _gestureRecognizerTap.cancelsTouchesInView = NO;
     _gestureRecognizerTap.delegate = self;
     [self.view addGestureRecognizer:_gestureRecognizerTap];
@@ -119,7 +116,7 @@
     _buttonCorner = [UIButton buttonWithType:UIButtonTypeCustom];
     [_buttonCorner setImage:[UIImage imageNamed:_strCornerButtonImageName] forState:UIControlStateNormal];
     [_buttonCorner addTarget:self action:@selector(hideMenu:) forControlEvents:UIControlEventTouchUpInside];
-    [_buttonCorner setFrame:CGRectMake(0, 20, CORNER_BUTTON_WIDTH, CORNER_BUTTON_WIDTH)];
+    [_buttonCorner setFrame:CGRectMake(0,_bShouldAddStatusBarMargin?20:0, CORNER_BUTTON_WIDTH, CORNER_BUTTON_WIDTH)];
     
     //Circular menu buttons
     _arrButtons = [[NSMutableArray alloc] init];
@@ -149,7 +146,7 @@
     for (int index = 0; index < _iNumberOfButtons; index++)
     {
         UIButton *button = [_arrButtons objectAtIndex:index];
-        button.center = STARTING_POINT;
+        button.center = CGPointMake(STARTING_POINT.x, STARTING_POINT.y + (_bShouldAddStatusBarMargin?20:0));
         [self.view addSubview:button];
     }
     
@@ -164,7 +161,7 @@
 
 - (void)setButtonFrames
 {
-    CGPoint circleCenter = STARTING_POINT;
+    CGPoint circleCenter = CGPointMake(STARTING_POINT.x, STARTING_POINT.y + (_bShouldAddStatusBarMargin?20:0));
     
     /*
      Logic : Use parametric equations to set point along circumference of circle
@@ -181,34 +178,39 @@
      */
     
     //1st circle initialization
-    float incAngle = ( 117/3 )*M_PI/180.0 ;
-    float curAngle = 0.19;//more value more to left;
-    float circleRadius = FIRST_INNER_CIRCLE_RADIUS;
+    int marginAngle             = 5;//5 degree space is kept to avoid touching button on extreme position to corner
+    int totalAvailableDegrees   = 90 - marginAngle*2;//Space left to fit button is 80
+    int numberOfButtons         = 3;//first circle has 3 button along circumference
+    
+    float incrementAngle    = totalAvailableDegrees/ (numberOfButtons - 1);//Available space is divided as per button count
+    float currentAngle      = marginAngle;
+    float circleRadius      = FIRST_INNER_CIRCLE_RADIUS;
     
     for (int i = 0; i < _iNumberOfButtons; i++)
     {
-        if(i == 3)//2nd circle
+        if(i == 3)//2nd circle started
         {
-            curAngle = 0.09;
-            incAngle = ( 115/4 )*M_PI/180.0;
-            circleRadius = FIRST_INNER_CIRCLE_RADIUS + DISTACE_BETWEEN_CIRCLES;
+            numberOfButtons = 4;
+            currentAngle    = marginAngle;
+            incrementAngle  = totalAvailableDegrees/(numberOfButtons - 1);
+            circleRadius    = FIRST_INNER_CIRCLE_RADIUS + DISTACE_BETWEEN_CIRCLES;
         }
-        else if(i == 7)//3rd circle
+        else if(i == 7)//3rd circle started
         {
-            curAngle = 0.04;
-            incAngle = ( 113/5 )*M_PI/180.0;
-            circleRadius = FIRST_INNER_CIRCLE_RADIUS +(DISTACE_BETWEEN_CIRCLES*2);
+            numberOfButtons = 5;
+            currentAngle    = marginAngle;
+            incrementAngle  = totalAvailableDegrees/(numberOfButtons - 1);
+            circleRadius    = FIRST_INNER_CIRCLE_RADIUS +(DISTACE_BETWEEN_CIRCLES*2);
         }
         
         CGPoint buttonCenter;
-        buttonCenter.x = circleCenter.x + cos(curAngle)*circleRadius;
-        buttonCenter.y = circleCenter.y + sin(curAngle)*circleRadius;
-        UIButton *button = [_arrButtons objectAtIndex:i];
-        button.center = buttonCenter;
-        curAngle += incAngle;
+        buttonCenter.x      = circleCenter.x + cos(currentAngle *M_PI/180.0)*circleRadius;
+        buttonCenter.y      = circleCenter.y + sin(currentAngle *M_PI/180.0)*circleRadius;
+        UIButton *button    = [_arrButtons objectAtIndex:i];
+        button.center       = buttonCenter;
+        currentAngle        += incrementAngle;
     }
 }
-
 
 #pragma mark - Remove menu
 
@@ -217,10 +219,10 @@
     if (sender &&
         sender != _buttonCorner &&
         _delegateCircularMenu &&
-        [_delegateCircularMenu respondsToSelector:@selector(circularMenuClickedButtonAtIndex:)])
+        [_delegateCircularMenu respondsToSelector:@selector(ADCircularMenuClickedButtonAtIndex:)])
     {
         UIButton *button = (UIButton*)sender;
-        [_delegateCircularMenu circularMenuClickedButtonAtIndex:(int)button.tag];
+        [_delegateCircularMenu ADCircularMenuClickedButtonAtIndex:(int)button.tag];
     }
     
     [self removeViewWithAnimation];
@@ -237,10 +239,10 @@
          for (int index = 0; index < _iNumberOfButtons; index++)
          {
              UIButton *button = [_arrButtons objectAtIndex:index];
-             button.center = STARTING_POINT;
+             button.center = CGPointMake(STARTING_POINT.x, STARTING_POINT.y + (_bShouldAddStatusBarMargin?20:0));
          }
      }
-                     completion:^(BOOL finished)
+    completion:^(BOOL finished)
      {
          [self.view removeFromSuperview];
          [self willMoveToParentViewController:nil];

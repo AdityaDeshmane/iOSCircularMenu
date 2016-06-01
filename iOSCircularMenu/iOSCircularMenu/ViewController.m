@@ -65,12 +65,13 @@
                              nil];
     
     _circularMenuVC = [[ADCircularMenu alloc] initWithMenuButtonImageNameArray:arrImageName
-                                                                    andCornerButtonImageName:@"btnMenuCorner"];
+                                                      andCornerButtonImageName:@"btnMenuCorner"
+                                                andShouldAddStatusBarMargin:YES];
     _circularMenuVC.delegateCircularMenu = self;
     [_circularMenuVC show];
 }
 
-- (void)circularMenuClickedButtonAtIndex:(int) buttonIndex
+- (void)ADCircularMenuClickedButtonAtIndex:(int) buttonIndex
 {
     NSLog(@"Circular Mneu : Clicked button at index : %d",buttonIndex);
 }
