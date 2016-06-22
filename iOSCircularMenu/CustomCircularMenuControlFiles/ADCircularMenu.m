@@ -54,13 +54,13 @@
 }
 
 //Initializations
--(void)setupUI;
+-(void)setupViewFrame;
 -(void)setTapGesture;
--(void)setupButtons;
+-(void)initializeButtons;
 
 //Show
 -(void)showButtons;
--(void)setButtonFrames;
+-(void)updateButtonCenters;
 
 //Hide
 - (void)removeViewWithAnimation;
@@ -84,9 +84,11 @@
         _strCornerButtonImageName   = strCornerButtonImageName;
         _bShouldAddStatusBarMargin  = bShouldAddStatusBarMargin;
         
-        [self setupUI];
+        [self setupViewFrame];
         [self setTapGesture];
-        [self setupButtons];
+        [self initializeButtons];
+        
+        [self.view setBackgroundColor:[UIColor colorWithRed:200.0/255 green:200.0/255 blue:200.0/255 alpha:0.3]];//Transparent color
     }
     
     return self;
@@ -94,12 +96,10 @@
 
 #pragma mark - Initialization methods
 
--(void)setupUI
+-(void)setupViewFrame
 {
     UIWindow *window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
     [self.view setFrame:window.screen.bounds];
-    [window.rootViewController.view addSubview:self.view];
-    [self.view setBackgroundColor:[UIColor colorWithRed:200.0/255 green:200.0/255 blue:200.0/255 alpha:0.3]];//Transparent color
 }
 
 -(void)setTapGesture
@@ -110,7 +110,7 @@
     [self.view addGestureRecognizer:_gestureRecognizerTap];
 }
 
-- (void)setupButtons
+- (void)initializeButtons
 {
     //Corner button
     _buttonCorner = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -136,13 +136,20 @@
 
 -(void)show
 {
+    //Add Menu as Subview on Window
+    UIWindow *window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+    [window.rootViewController.view addSubview:self.view];
+    
+    //Add buttons as subview and animate em
     [self showButtons];
 }
 
 - (void)showButtons
 {
+    //Add corner button as subview
     [self.view addSubview:_buttonCorner];
     
+    //Add menu buttons, set centter as starting point constant
     for (int index = 0; index < _iNumberOfButtons; index++)
     {
         UIButton *button = [_arrButtons objectAtIndex:index];
@@ -152,14 +159,15 @@
     
     [self.view layoutIfNeeded]; // Ensures that all pending layout operations have been completed
     
+    //Animate
     [UIView animateWithDuration:SHOW_ANIMATION_DURATION animations:
      ^{
-         [self setButtonFrames];
+         [self updateButtonCenters];
          [self.view layoutIfNeeded]; // Forces the layout of the subtree animation block and then captures all of the frame changes
      }];
 }
 
-- (void)setButtonFrames
+- (void)updateButtonCenters
 {
     CGPoint circleCenter = CGPointMake(STARTING_POINT.x, STARTING_POINT.y + (_bShouldAddStatusBarMargin?20:0));
     
